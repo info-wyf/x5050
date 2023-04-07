@@ -1,0 +1,7 @@
+server:
+  port: 5050
+spring:
+  profiles:
+     active: local
+mybatis:
+   mapperLocations: classpath:/mapper/*.xml
