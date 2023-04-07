@@ -1,0 +1,4 @@
+2023-01-07 14:47:07.006 WARN  [][] [HikariPool-1 housekeeper] c.z.hikari.pool.HikariPool:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17d18h31m47s991ms).
+2023-01-07 18:32:25.525 WARN  [][] [HikariPool-1 housekeeper] c.z.hikari.pool.HikariPool:788 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m16s279ms).
+2023-01-07 20:35:56.284 INFO  [][] [SpringApplicationShutdownHook] c.z.hikari.HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2023-01-07 20:35:56.330 INFO  [][] [SpringApplicationShutdownHook] c.z.hikari.HikariDataSource:352 - HikariPool-1 - Shutdown completed.

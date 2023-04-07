@@ -1,0 +1,6 @@
+2023-04-07 10:12:39.041 INFO  [][] [restartedMain] c.heeexy.example.MyApplication:55 - Starting MyApplication using Java 1.8.0_111 on wyf-MacBook-Pro.local with PID 19829 (/Users/info_kerwin/Documents/Intellij_workspace/x5050/back/target/classes started by info_kerwin in /Users/info_kerwin/Documents/Intellij_workspace/x5050)
+2023-04-07 10:12:39.043 DEBUG [][] [restartedMain] c.heeexy.example.MyApplication:56 - Running with Spring Boot v2.7.6, Spring v5.3.24
+2023-04-07 10:12:39.045 INFO  [][] [restartedMain] c.heeexy.example.MyApplication:637 - The following 1 profile is active: "local"
+2023-04-07 10:12:39.217 WARN  [][] [restartedMain] o.s.b.c.c.ConfigDataEnvironment:258 - Property 'spring.profiles' imported from location 'class path resource [application-local.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application-local.yml] - 2:13]
+2023-04-07 10:12:44.614 DEBUG [][] [restartedMain] c.h.e.c.filter.RequestFilter:242 - Filter 'requestFilter' configured for use
+2023-04-07 10:12:46.254 INFO  [][] [restartedMain] c.heeexy.example.MyApplication:61 - Started MyApplication in 8.88 seconds (JVM running for 10.899)
