@@ -36,7 +36,6 @@ public class MemberController {
     @RequiresPermissions("member:add")
     @PostMapping("/addMember")
     public JSONObject addMember(@RequestBody JSONObject requestJson) {
-        CommonUtil.hasAllRequired(requestJson, "id");
         return memberService.addMember(requestJson);
     }
 

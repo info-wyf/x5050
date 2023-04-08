@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff4fc063-8648-4dbe-91c0-de823acc7d7f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/heeexy/example/controller/MemberController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/heeexy/example/dao/MemberDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/java/com/heeexy/example/service/MemberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back/src/main/resources/mapper/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/java/com/heeexy/example/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/java/com/heeexy/example/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/src/main/resources/mapper/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back/src/main/resources/mapper/MemberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/com/heeexy/example/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/com/heeexy/example/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/target/classes/mapper/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/back/target/classes/mapper/MemberMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +126,7 @@
       <workItem from="1670421529127" duration="5365000" />
       <workItem from="1673448389080" duration="639000" />
       <workItem from="1680053300067" duration="1824000" />
-      <workItem from="1680833514306" duration="11493000" />
+      <workItem from="1680833514306" duration="18312000" />
     </task>
     <servers />
   </component>

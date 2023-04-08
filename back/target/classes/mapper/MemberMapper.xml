@@ -5,14 +5,48 @@
 
     <insert id="addMember" parameterType="com.alibaba.fastjson.JSONObject">
         INSERT INTO member
-            (content)
-        VALUES (#{content})
+            (serial_number,
+            age,
+            birth_location,
+            work_location,
+            birth_year,
+            height,
+            weight,
+            sex,
+            job,
+            marriage,
+            remark,
+            standard,
+            educational_background,
+            wechat_name)
+        VALUES (#{serial_number},
+            #{age,jdbcType=INTEGER},
+            #{birth_location},
+            #{work_location},
+            #{birth_year},
+            #{height},
+            #{weight},
+            #{sex},
+            #{job},
+            #{marriage},
+            #{remark},
+            #{standard},
+            #{educational_background},
+            #{wechat_name})
     </insert>
 
     <select id="countMember" resultType="Integer">
         SELECT count(0)
         FROM member w
-        WHERE w.delete_status = '1'
+        <where>
+            AND w.delete_status = '1'
+            <if test="null != serial_number and '' != serial_number">
+                AND w.serial_number like concat('%',#{serial_number,jdbcType=VARCHAR},'%') ESCAPE '/'
+            </if>
+            <if test="null != sex and '' != sex">
+                AND w.sex = #{sex}
+            </if>
+        </where>
     </select>
 
     <select id="listMember" resultType="com.alibaba.fastjson.JSONObject">
@@ -34,7 +68,15 @@
                w.educational_background,
                w.wechat_name
         FROM member w
-        WHERE w.delete_status = '1'
+        <where>
+            AND w.delete_status = '1'
+            <if test="null != serial_number and '' != serial_number">
+                AND w.serial_number like concat('%',#{serial_number,jdbcType=VARCHAR},'%') ESCAPE '/'
+            </if>
+            <if test="null != sex and '' != sex">
+                AND w.sex = #{sex}
+            </if>
+        </where>
         ORDER BY w.id DESC
         LIMIT #{offSet}, #{pageRow}
     </select>
@@ -84,13 +126,12 @@
                w.wechat_name
         FROM member w
         <where>
-            1=1
-            and member.delete_status = '1'
-            <if test="serial_number !=null and serial_number !=''">
-                and member.serial_number like #{serial_number}
+            AND w.delete_status = '1'
+            <if test="null != serial_number and '' != serial_number">
+                AND w.serial_number like concat('%',#{serial_number,jdbcType=VARCHAR},'%') ESCAPE '/'
             </if>
-            <if test="sex !=null and sex !=''">
-                and member.sex like #{sex}
+            <if test="null != sex and '' != sex">
+                AND w.sex = #{sex}
             </if>
         </where>
         ORDER BY w.id DESC
