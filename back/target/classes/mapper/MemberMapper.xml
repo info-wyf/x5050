@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.heeexy.example.dao.MemberDao">
+
+    <insert id="addMember" parameterType="com.alibaba.fastjson.JSONObject">
+        INSERT INTO member
+            (content)
+        VALUES (#{content})
+    </insert>
+
+    <select id="countMember" resultType="Integer">
+        SELECT count(0)
+        FROM member w
+        WHERE w.delete_status = '1'
+    </select>
+
+    <select id="listMember" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT w.id,
+               w.serial_number,
+               date_format(w.create_time, '%Y.%m.%d %T') createTime,
+               date_format(w.update_time, '%Y.%m.%d %T') updateTime,
+               w.age,
+               w.birth_location,
+               w.work_location,
+               w.birth_year,
+               w.height,
+               w.weight,
+               w.sex,
+               w.job,
+               w.marriage,
+               w.remark,
+               w.standard,
+               w.educational_background,
+               w.wechat_name
+        FROM member w
+        WHERE w.delete_status = '1'
+        ORDER BY w.id DESC
+        LIMIT #{offSet}, #{pageRow}
+    </select>
+
+    <update id="updateMember" parameterType="com.alibaba.fastjson.JSONObject">
+        UPDATE member
+        SET serial_number = #{serial_number},
+            age = #{age},
+            birth_location = #{birth_location},
+            work_location = #{work_location},
+            birth_year = #{birth_year},
+            height = #{height},
+            weight = #{weight},
+            sex = #{sex},
+            job = #{job},
+            marriage = #{marriage},
+            remark = #{remark},
+            standard = #{standard},
+            educational_background = #{educational_background},
+            wechat_name = #{wechat_name}
+        WHERE id = #{id}
+    </update>
+
+    <update id="deleteMember" parameterType="com.alibaba.fastjson.JSONObject">
+        UPDATE member
+        SET delete_status = '2'
+        WHERE id = #{id}
+    </update>
+
+    <select id="searchMember" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT w.id,
+               w.serial_number,
+               date_format(w.create_time, '%Y.%m.%d %T') createTime,
+               date_format(w.update_time, '%Y.%m.%d %T') updateTime,
+               w.age,
+               w.birth_location,
+               w.work_location,
+               w.birth_year,
+               w.height,
+               w.weight,
+               w.sex,
+               w.job,
+               w.marriage,
+               w.remark,
+               w.standard,
+               w.educational_background,
+               w.wechat_name
+        FROM member w
+        <where>
+            1=1
+            and member.delete_status = '1'
+            <if test="serial_number !=null and serial_number !=''">
+                and member.serial_number like #{serial_number}
+            </if>
+            <if test="sex !=null and sex !=''">
+                and member.sex like #{sex}
+            </if>
+        </where>
+        ORDER BY w.id DESC
+            LIMIT #{offSet}, #{pageRow}
+    </select>
+</mapper>
